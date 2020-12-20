@@ -14,12 +14,15 @@
 			class Likebutton extends React.Component {
 				//컴포넌트가 실행될때 가장먼저 실행되는 부분. react에서는 기본적으로 그냥 쓰는거임.
 				constructor(props){
-					super(props);	
+					super(props); 
+					this.state = {//상태는 바뀔 여지가 있는 부분
+						liked: false,
+					};
 				}
 				//좋아요 버튼을 화면에 어떻게 표시할것인지 결정
 				render(){
-					return e('button', {onClick: () => {console.log('clicked')}}, 'Like');//<button>Like</button> 이런 태그를 만들겠다~ 라는 뜻
-					//<button onclick="()=>{console.log('clicked)}" type="submit">Like</button>
+					return e('button', {onClick: () => {this.setState({ liked: true })}}, 'Like');//<button>Like</button> 이런 태그를 만들겠다~ 라는 뜻
+					//setState : 상태를 바꿈
 				}
 			}
 		</script>
