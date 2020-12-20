@@ -18,7 +18,8 @@
 				}
 				//좋아요 버튼을 화면에 어떻게 표시할것인지 결정
 				render(){
-					return e('button', null, 'Like');//<button>Like</button> 이런 태그를 만들겠다~ 라는 뜻
+					return e('button', {onClick: () => {console.log('clicked')}}, 'Like');//<button>Like</button> 이런 태그를 만들겠다~ 라는 뜻
+					//<button onclick="()=>{console.log('clicked)}" type="submit">Like</button>
 				}
 			}
 		</script>
