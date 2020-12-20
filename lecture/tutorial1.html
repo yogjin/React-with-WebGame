@@ -21,8 +21,10 @@
 				}
 				//좋아요 버튼을 화면에 어떻게 표시할것인지 결정
 				render(){
-					return e('button', {onClick: () => {this.setState({ liked: true })}}, 'Like');//<button>Like</button> 이런 태그를 만들겠다~ 라는 뜻
-					//setState : 상태를 바꿈
+					return e('button',
+							 {onClick: () => {this.setState({ liked: true })}, type: 'submit' },
+							 this.state.liked === true ? 'Liked' : 'Like');
+							//state(data) 가 true로 바뀌면 view가 Liked로 바뀐다. 단방향.
 				}
 			}
 		</script>
